@@ -1,0 +1,21 @@
+@startuml
+
+title Product Model
+
+class Product {
+    -name : string
+    -price : float
+    -quantity : int 
+    --
+    +Product(name, price, quantity)
+    --
+    +getName() : stirng
+    +getPrice() : float
+    +getQuantity() : int
+    --
+    +setName(value) : void
+    +setPrice(value) : void
+    +setQuantity(value) : void
+}
+
+@enduml

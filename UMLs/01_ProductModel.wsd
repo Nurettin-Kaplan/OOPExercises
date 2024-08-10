@@ -3,19 +3,21 @@
 title Product Model
 
 class Product {
-    -name : string
-    -price : float
-    -quantity : int 
+    -name:string
+    -price:float
+    -quantity:int 
     --
-    +Product(name, price, quantity)
+    +Product(name:string ,price:float, quantity:int)
     --
-    +getName() : stirng
-    +getPrice() : float
-    +getQuantity() : int
+    +getName():stirng
+    +getPrice():float
+    +getQuantity():int
     --
-    +setName(value) : void
-    +setPrice(value) : void
-    +setQuantity(value) : void
+    +setName(value):void
+    +setPrice(value):void
+    +setQuantity(value):void
+    --
+    +getTotalPrice():float
 }
 
 @enduml

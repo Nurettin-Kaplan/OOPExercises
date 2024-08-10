@@ -20,4 +20,12 @@ class Product {
     +getTotalPrice():float
 }
 
+class Object{
+    toString():string
+}
+
+Product -up-|> Object : "<<extends>>"
+
+hide empty members
+
 @enduml

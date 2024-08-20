@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Vehicle{
@@ -48,6 +49,9 @@ public:
     }
     virtual void drive(){
         cout << "Vehicle is driving." << endl;
+    }
+    virtual string toString(){
+        return manufacturer + " - " + to_string(year) + " - " + color;
     }
 };
 
@@ -118,27 +122,29 @@ public:
 int main(){
 
     Vehicle item1 = Vehicle("Skoda", 2019, "White");
-    cout << "Vehicle " << item1.getManufacturer() << endl;
-
+    cout << item1.toString() << endl;
+ 
     Car item2 = Car();
     item2.setManufacturer("TOGG");
-    cout <<"Vehicle " << item2.getManufacturer() << endl;
+    item2.setYear(2023);
+    item2.setColor("Red");
+    cout << item2.toString() << endl;
     item2.openSunRoof();
 
     Car item3 = Car("Opel", 2020, "Black");
-    cout <<"Vehicle " << item3.getManufacturer() << endl;
+    cout << item3.toString() << endl;
     item3.openSunRoof();
 
     Truck item4 = Truck("Mercedes", 2018, "Red");
-    cout << "Vehicle " << item4.getManufacturer() << endl;
+    cout << item4.toString() << endl;
     item4.transport();
 
     Bus item5 = Bus("Anadolu Isuzu", 2016, "Brown");
-    cout << "Vehicle " << item5.getManufacturer() << endl;
+    cout << item5.toString() << endl;
     item5.scheduling();
 
     SchoolBus item6 = SchoolBus("Isuzu", 2015, "Yellow");
-    cout << "Vehicle " << item6.getManufacturer() << endl;
+    cout << item6.toString() << endl;
     item6.scheduling();
     item6.getFare();
     

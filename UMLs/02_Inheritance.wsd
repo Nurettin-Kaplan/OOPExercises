@@ -21,6 +21,7 @@ class Vehicle {
     +start()
     +stop()
     +drive()
+    +toString()
 }
 
 class Car {

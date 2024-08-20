@@ -40,13 +40,13 @@ public:
         this->color = color;
     }
 
-    void start(){
+    virtual void start(){
         cout << "Vehicle has been started." << endl;
     }
-    void stop(){
+    virtual void stop(){
         cout << "Vehicle has been stopped." << endl;
     }
-    void drive(){
+    virtual void drive(){
         cout << "Vehicle is driving." << endl;
     }
 };
@@ -56,13 +56,14 @@ public:
     Car(){
         cout << "\nAn instance has been derived from Car." << endl;
     }
-
     Car(string manufacturer, int year, string color) : Vehicle(manufacturer, year, color){        
         cout << "\nAn instance with full parameters has been derived from Car." << endl;
     }
-
     void openSunRoof(){
         cout << "The sunroof has been opened." << endl;
+    }
+    void drive() override {
+        cout << "The car manufacturer by " << this->manufacturer << " is being driven." << endl;
     }
 };
 
@@ -77,6 +78,9 @@ public:
     void transport(){
         cout << "transport() has been called." << endl;
     }
+    void drive() override {
+        cout << "The truck manufacturer by " << this->manufacturer << " is being driven." << endl;
+    }
 };
 
 class Bus : public Vehicle{
@@ -84,11 +88,14 @@ public:
     Bus(){
         cout << "\nAn instance has been derived from Bus." << endl;
     }
-    Bus(string menufacturer, int year, string color) : Vehicle(manufacturer, year, color){
+    Bus(string menufacturer, int year, string color) : Vehicle(menufacturer, year, color){
         cout << "\nAn instance with full parameters has been created from Bus class." << endl;
     }
     void scheduling(){
         cout << "Scheduled." << endl;
+    }
+    void drive() override {
+        cout << "The bus manufacturer by " << this->manufacturer << " is being driven." << endl;
     }
 };
 
@@ -102,6 +109,9 @@ public:
     }
     void getFare(){
         cout << "getFare() has been called." << endl;
+    }
+    void drive() override {
+        cout << "The school bus manufacturer by " << this->manufacturer << " is being driven." << endl;
     }
 };
 
@@ -131,6 +141,24 @@ int main(){
     cout << "Vehicle " << item6.getManufacturer() << endl;
     item6.scheduling();
     item6.getFare();
+    
+    item1.drive();
+    item1.stop();
+
+    item2.drive();
+    item2.stop();
+
+    item3.drive();
+    item3.stop();
+
+    item4.drive();
+    item4.stop();
+
+    item5.drive();
+    item5.stop();
+
+    item6.drive();
+    item6.stop();
 
     return 0;
 }

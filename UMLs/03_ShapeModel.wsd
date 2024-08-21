@@ -1,0 +1,43 @@
+@startuml Abstract Class
+title Shape Model
+
+abstract class Shape{
+    #x:int
+    #y:int
+    --
+    +getX():int
+    +getY():int
+    --
+    +setX()
+    +setY()
+    --
+    +Shape()
+    +Shape(x:int, y:int)
+    --
+    +{abstract}draw()
+}
+
+class Triangel{
+    +Triangle(x:int, y:int)
+    --
+    +draw()
+}
+
+class Rectangle{
+    +Rectangle(x:int, y:int)
+    --
+    +draw()
+}
+
+class Square{
+    +Square(x:int)
+    --
+    +draw()
+}
+
+Triangel -up-|> Shape : <<extends>>
+Rectangle -up-|> Shape : <<extends>>
+Square -up-|> Rectangle : <<extends>>
+
+hide empty members
+@enduml

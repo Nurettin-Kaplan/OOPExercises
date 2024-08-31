@@ -5,18 +5,23 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
         
-        List<Integer> numbers = Arrays.asList(60, 90, 80, 70, 40);
-        writeList(numbers);
+        List<Employee> employees = Arrays.asList(
+            new Employee("Zehra Dağ", 25d), 
+        new Employee("Ege Deniz", 21d), 
+        new Employee("Mutlu Ak", 29d), 
+        new Employee("Figen Can", 28d), 
+        new Employee("Ahmet Denizli", 27d));
+        writeList(employees);
 
         System.out.println("-----");
 
-        Collections.sort(numbers);
-        writeList(numbers);
+        Collections.sort(employees);
+        writeList(employees);
 
     }
 
-    private static void writeList(List<Integer> collection){
-        for (Integer item : collection) {
+    private static void writeList(Iterable collection){
+        for (Object item : collection) {
             System.out.println(item);
         }
     }

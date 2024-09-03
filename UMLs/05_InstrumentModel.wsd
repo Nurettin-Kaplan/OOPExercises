@@ -21,6 +21,12 @@ class Piano{
     +play()
 }
 
+class Orchestra {
+    -instruments: Instrument[]
+    --
+    +playAll()
+}
+
 Guitar .up.|> Instrument : <<implements>>
 Guitar .up.|> ElectronicInstrument : <<implements>>
 Piano .up.|> Instrument : <<implements>>

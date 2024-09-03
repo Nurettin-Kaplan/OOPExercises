@@ -1,0 +1,20 @@
+@startuml
+title Instrument
+
+interface Instrument{
+    +play()
+}
+
+class Guitar{
+    +play()
+}
+
+class Piano{
+    +play()
+}
+
+Guitar .up.|> Instrument : <<implements>>
+Piano .up.|> Instrument : <<implements>>
+
+hide empty members
+@enduml

@@ -4,5 +4,9 @@ public class Guitar implements Instrument {
     public void play() {
         System.out.println("Playing the guitar..");
     }
+
+    public void setChord(){
+        System.out.println("The guitar has been tuned.");
+    }
     
 }

@@ -1,4 +1,4 @@
-public class Guitar implements Instrument {
+public class Guitar implements Instrument, ElectronicInstrument {
 
     @Override
     public void play() {
@@ -6,7 +6,12 @@ public class Guitar implements Instrument {
     }
 
     public void setChord(){
-        System.out.println("The guitar has been tuned.");
+        System.out.println("The guitar has been tunned.");
+    }
+
+    @Override
+    public void tune() {
+        System.out.println("Guitar is being tuned.");
     }
     
 }

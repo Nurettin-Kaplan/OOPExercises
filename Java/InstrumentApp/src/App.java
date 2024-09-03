@@ -1,5 +1,11 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
+        Instrument guitar = new Guitar();
+        Instrument piano = new Piano();
+
+        guitar.play();
+        piano.play();
+
     }
 }

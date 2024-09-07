@@ -1,0 +1,22 @@
+@startuml use-a
+title has-a
+
+class Student
+{
+    -name: String
+    -studentNumber: String 
+    +Student(name:String, studentNumber:String)
+}
+
+class University
+{
+    -name:String
+    -students:List<Student>
+    +University(name:String)
+    +add_Student(student: Stundent):void
+    +getStudents():void
+}
+
+Student -down-o University : 1..*
+
+@enduml

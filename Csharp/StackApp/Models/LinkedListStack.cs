@@ -3,16 +3,16 @@ using StackApp.Contract;
 
 namespace StackApp.Models;
 
-public class LinkedListStack : IStack {
-
-    private LinkedList<object> _collection;
+public class LinkedListStack<T> : IStack<T>
+{
+    private LinkedList<T> _collection;
 
     public LinkedListStack()
     {
-        _collection = new LinkedList<object>();
+        _collection = new LinkedList<T>();
     }
 
-    public LinkedListStack(IEnumerable<int> collection) : this()
+    public LinkedListStack(IEnumerable<T> collection) : this()
     {
         foreach(var item in collection)
         {
@@ -20,19 +20,19 @@ public class LinkedListStack : IStack {
         }
     }
 
-    public object Peek()
+    public T Peek()
     {
         return _collection.First.Value;
     }
 
-    public object Pop()
+    public T Pop()
     {
         var temp = _collection.First.Value;
         _collection.RemoveFirst();
         return temp;
     }
 
-    public void Push(object item)
+    public void Push(T item)
     {
         _collection.AddFirst(item);
     }

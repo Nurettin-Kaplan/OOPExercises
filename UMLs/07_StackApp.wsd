@@ -20,7 +20,15 @@ class ListStack<T>{
     +peek():T
 }
 
+class Stack<T>{
+    -stack:IStack[]
+    -collection:T[]
+    +push():T
+    +peek():T
+}
+
 ListStack -.l-|> IStack : <<implements>>
 LinkedListStack -.r-|> IStack : <<implements>>
+Stack -.d-|> IStack : <<implements>>
 
 @enduml

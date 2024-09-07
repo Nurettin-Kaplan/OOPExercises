@@ -1,0 +1,77 @@
+@startuml
+title Chess Set
+
+class ChessSet
+{
+    + pieces:List[Piece]
+    +board:Board
+}
+
+Abstract class Piece
+{
+    +chess_set: ChessSet
+    +color : Color
+    +move(board:Board)
+}
+
+class Board
+{
+    +chess_set: ChessSet
+    +positions: Position
+}
+
+class Position
+{
+    +chess_board: Board
+}
+
+class Player
+
+class Rook
+{
+    +shape
+    +move(board: Board)
+}
+
+class Bishop
+{
+    +shape
+    +move(board: Board)
+}
+
+class King
+{
+    +shape
+    +move(board: Board)
+}
+
+class Knight
+{
+    +shape
+    +move(board: Board)
+}
+
+class Pawn 
+{
+    +shape
+    +move(board: Board)
+}
+
+class Queen
+{
+    +shape
+    +move(board: Board)
+}
+
+ChessSet o-down- Board : 1    1
+ChessSet o-down- Piece : 32
+Position -up-o Board : 64   1
+Rook -up-|> Piece : <<extends>>
+Bishop -up-|> Piece : <<extends>>
+King -up-|> Piece : <<extends>>
+Knight -down-|> Piece : <<extends>>
+Pawn -down-|> Piece : <<extends>>
+Queen -down-|> Piece : <<extends>>
+
+hide empty members
+@enduml

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using StackApp.Contract;
 
 namespace StackApp.Models;
@@ -6,8 +7,17 @@ public class LinkedListStack : IStack {
 
     private LinkedList<object> _collection;
 
-    public LinkedListStack(){
+    public LinkedListStack()
+    {
         _collection = new LinkedList<object>();
+    }
+
+    public LinkedListStack(IEnumerable<int> collection) : this()
+    {
+        foreach(var item in collection)
+        {
+            Push(item);
+        }
     }
 
     public object Peek()

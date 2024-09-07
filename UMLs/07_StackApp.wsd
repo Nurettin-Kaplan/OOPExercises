@@ -1,23 +1,23 @@
 @startuml
-title Object Stack
+title Generic Stack
 
-interface IStack{
-    +push(item:object)
-    +pop():object
-    +peek():object
+interface IStack<T>{
+    +push(item:T)
+    +pop():T
+    +peek():T
 }
 
-class LinkedListStack{
-    -collection:object[]
-    +push(item:object)
-    +pop():object
-    +peek():object
+class LinkedListStack<T>{
+    -collection:T[]
+    +push(item:T)
+    +pop():T
+    +peek():T
 }
 
-class ListStack{
-    -collection:object[]
-    +push():object
-    +peek():object
+class ListStack<T>{
+    -collection:T[]
+    +push():T
+    +peek():T
 }
 
 ListStack -.l-|> IStack : <<implements>>

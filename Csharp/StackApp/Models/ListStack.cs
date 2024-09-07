@@ -1,3 +1,4 @@
+using System.Collections;
 using StackApp.Contract;
 
 namespace StackApp.Models;
@@ -7,9 +8,17 @@ public class ListStack : IStack
     private List<object> _collection;
     private int _lastIndex => _collection.Count - 1;
 
-    public ListStack(){
+    public ListStack()
+    {
         _collection = new List<object>();
-    } 
+    }
+    public ListStack(IEnumerable collection) : this()
+    {
+        foreach(var item in collection)
+        {
+            Push(item);
+        }
+    }
 
     public object Peek()
     {
